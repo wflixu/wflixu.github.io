@@ -57,13 +57,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Today">
-<meta property="og:url" content="dzlixu.github.io/index.html">
+<meta name="description" content="页面布局是把整个网页中要显示的内容，按结构和样式特点，划分成结构明显的若干个块，在实现网页样式时便于从整体到局部实现。开始学习前端时，对布局不太重视，工作中才发现，拿到设计图后能快速拿出可行的布局方案即是能力的体现，也为后面一步步实现打下基础。准确可行的布局方案，可以加快设计图的实现，可以节省设计图调整后的代码修改量。 元素在页面中占据的空间在做页面布局前，你的理解css 页面元素盒子模型，htm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html 页面布局">
+<meta property="og:url" content="dzlixu.github.io/2018/03/15/html 页面布局/index.html">
 <meta property="og:site_name" content="Today">
+<meta property="og:description" content="页面布局是把整个网页中要显示的内容，按结构和样式特点，划分成结构明显的若干个块，在实现网页样式时便于从整体到局部实现。开始学习前端时，对布局不太重视，工作中才发现，拿到设计图后能快速拿出可行的布局方案即是能力的体现，也为后面一步步实现打下基础。准确可行的布局方案，可以加快设计图的实现，可以节省设计图调整后的代码修改量。 元素在页面中占据的空间在做页面布局前，你的理解css 页面元素盒子模型，htm">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T13:26:02.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Today">
+<meta name="twitter:title" content="html 页面布局">
+<meta name="twitter:description" content="页面布局是把整个网页中要显示的内容，按结构和样式特点，划分成结构明显的若干个块，在实现网页样式时便于从整体到局部实现。开始学习前端时，对布局不太重视，工作中才发现，拿到设计图后能快速拿出可行的布局方案即是能力的体现，也为后面一步步实现打下基础。准确可行的布局方案，可以加快设计图的实现，可以节省设计图调整后的代码修改量。 元素在页面中占据的空间在做页面布局前，你的理解css 页面元素盒子模型，htm">
 
 
 
@@ -81,7 +85,7 @@
   };
 </script>
 
-  <title> Today </title>
+  <title> html 页面布局 | Today </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -102,9 +106,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -201,9 +203,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -223,10 +225,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2018/03/15/html 页面布局/" itemprop="url">
-                  html 页面布局
-                </a>
+                html 页面布局
               
             
           </h1>
@@ -265,9 +264,7 @@
       
 
       
-        
-          
-            <p>页面布局是把整个网页中要显示的内容，按结构和样式特点，划分成结构明显的若干个块，在实现网页样式时便于从整体到局部实现。开始学习前端时，对布局不太重视，工作中才发现，拿到设计图后能快速拿出可行的布局方案即是能力的体现，也为后面一步步实现打下基础。准确可行的布局方案，可以加快设计图的实现，可以节省设计图调整后的代码修改量。</p>
+        <p>页面布局是把整个网页中要显示的内容，按结构和样式特点，划分成结构明显的若干个块，在实现网页样式时便于从整体到局部实现。开始学习前端时，对布局不太重视，工作中才发现，拿到设计图后能快速拿出可行的布局方案即是能力的体现，也为后面一步步实现打下基础。准确可行的布局方案，可以加快设计图的实现，可以节省设计图调整后的代码修改量。</p>
 <h1 id="元素在页面中占据的空间"><a href="#元素在页面中占据的空间" class="headerlink" title="元素在页面中占据的空间"></a>元素在页面中占据的空间</h1><p>在做页面布局前，你的理解css 页面元素盒子模型，html文档的渲染，把元素看作一个盒子，盒子有内容的宽高，内容到边框四周的距离（内边距），边框的宽度，以及边框以外四周的宽度。<br>一个元素的实际尺寸：元素的实际宽度 = 左右外边距 + 左右边框 + 左右内边距 + width;<br>元素的实际高度 = 上下外边距 + 上下边框 + 上下内边距 + height;</p>
 <p>元素定位<br>元素在页面中的位置，需要给页面定位。定位的方式有5种，分别是普通文档流定位，浮动定位，相对定位、绝对定位、固定定位。</p>
 <p>普通文档流定位<br>页面中的元素，按顺序在页面中依次显示，其中块级元素（div p h1-h6 ul ol table）会独占一行，行内元素和行内块元素</p>
@@ -276,12 +273,12 @@
 <p>绝对定位 absolute<br>绝对定位的元素会脱离普通文档流，不占据页面空间。绝对定位的初始化位置相对于最近的”已定位”的”祖先元素”来进行位置的初始化。如果没有已经定位的父祖先元素，初试位置相对于body。</p>
 <p>固定定位 fixed<br>绝对定位的位置是相对于浏览器窗口。固定定位的元素推理普通文档流，不占页面空间。</p>
 
-          
-        
       
     </div>
 
     <div>
+      
+        
       
     </div>
 
@@ -289,116 +286,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2018/03/09/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-09T20:05:04+08:00" content="2018-03-09">
-              2018-03-09
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -406,6 +319,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -425,8 +342,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -464,6 +390,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#元素在页面中占据的空间"><span class="nav-number">1.</span> <span class="nav-text">元素在页面中占据的空间</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -555,6 +492,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
 
   
 

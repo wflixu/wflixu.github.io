@@ -1438,8 +1438,8 @@ pre .javascript .function {
   display: block;
   margin: 0 auto;
   padding: 2px;
-  max-width: 120px;
-  height: auto;
+  width: 120px;
+  height: 120px;
   border: 1px solid #eee;
 }
 .site-author-name {
@@ -1520,7 +1520,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff4e;
+  background: #f0bb65;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2367,8 +2367,7 @@ body {
   margin: 0 auto;
   padding: 2px;
   max-width: 120px;
-  height: auto;
-  max-height: 160px;
+  height: 120px;
   border: 1px solid #eee;
 }
 .site-author-name {
