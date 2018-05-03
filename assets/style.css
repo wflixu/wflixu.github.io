@@ -1,0 +1,62 @@
+body {
+  font-family: "microsoft yahei", Arial, Helvetica, sans-serif;
+  color: #666;
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  list-style: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #ff0700;
+}
+input {
+  border: none;
+}
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: url(bg.jpg) center no-repeat;
+}
+
+.container {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 600px;
+  margin-top: -200px;
+  margin-left: -300px;
+  background-color: rgba(220, 220, 220, 0.8);
+}
