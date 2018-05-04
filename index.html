@@ -1,25 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/style.css">
-  <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>animated - slidePage.js</title>
+    <link rel="stylesheet" type="text/css" href="./assets/slidepage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 
 </head>
 
-<body>
-  <div class="container">
-    <h1> welcome wflixu github pages </h1>
-    <ul>
-      <li>
-        <a href="./ife-mvvm/2.1/index.html"> mvvm 2.1</a>
-      </li>
-    </ul>
-  </div>
+<body ontouchstart="">
+    <div class="slide-container" id="slidePage-container">
 
+        <div class="slide-page page1">
+            <div class="container">
+                <h2>My Pages</h2>
+                <div class="step step1 animated fadeIn" data-delay="1000"></div>
+                <div class="step step2 animated fadeIn"></div>
+            </div>
+        </div>
+        <div class="slide-page page2">
+            <div class="container">
+                <h2>Something funny</h2>
+
+                <div class="content">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/wflixu">My GitHub</a>
+                        </li>
+                        <li>
+                            <a href="http://www.cnblogs.com/dzlixu/">My blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="step step1 animated bounceIn" data-delay="1000"></div>
+                <div class="step step2 animated flipInX" data-delay="1500"></div>
+                <div class="step step3 animated rollIn" data-delay="2000"></div>
+            </div>
+        </div>
+        <div class="slide-page page3">
+            <div class="container">
+                <h2>Github Project</h2>
+
+                <div class="content">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/wflixu/today-server">博客系统（node+express+mongodb）</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/wflixu/today-app">Today APP (vue vue-router vuex)</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/wflixu/angular-admin">Angular-Admin</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/wflixu/ssm">Java SSM(Spring SpringMVC MyBatis)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./assets/slidepage.js"></script>
+    <script type="text/javascript">
+        var slide = new slidePage({
+            useAnimation: true
+        })
+        window.slide = slide
+    </script>
 </body>
 
 </html>
