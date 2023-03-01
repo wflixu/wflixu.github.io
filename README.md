@@ -1,74 +1,65 @@
-# 联系方式
-- 手机: 166-0292-1819
-- Email: dzlixu@hotmail.com
+# Astro Starter Kit: Blog
 
-# 个人信息 
-- 李旭/男/1990
-- 硕士/2016年毕业/西安科技大学
-- 工作年限：4.5年
-- 期望职位：中高级web前端
+```
+npm create astro@latest -- --template blog
+```
 
-# 工作经历
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/blog)
 
-## 1. 中软国际科技服务有限公司（2018年9月--2021年1月）
-
-主要负责维护一个内部使用的组件库，第一年在维护angular.js的版本，第二年在开发维护Angular8+的版本版本。
-
-主要工作时处理组件库issue，根据需求添加新的功能，检视PR代码，月度版本发布. 
-
-主要业绩：开发近十个组件，代码2万+行，处理issue 400+；两年绩效均为A;
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 
-## 2. 陕西长通科技有限公司（2017年4月--2018年5月）
+![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
 
-主要经历3个项目的开发
+Features:
 
-### 2.1 车检助理 
+- ✅ Minimal styling (make it your own!)
+- ✅ 100/100 Lighthouse performance
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ RSS Feed support
+- ✅ Markdown & MDX support
 
-公司监管服务平台系统，需要配套的手机app，包括Android和iOS版。使用混合应用框架，独立完成Android和iOS的开发，并在appstore上架。
+## 🚀 Project Structure
 
-### 2.2 汽车检测 
+Inside of your Astro project, you'll see the following folders and files:
 
-公司 “汽车检测app” ,原来andriod版用原生实现，使用混合应用重构，并优化已有功能体验。
+```
+├── public/
+├── src/
+│   ├── components/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── README.md
+├── package.json
+└── tsconfig.json
+```
 
-### 2.3 监管服务平台
-监管服务平台pc端视图页面, 主要是页面样式和调后台服务接口拿数据。
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## 3. 陕西凯锐信息有限公司 （2016年8月--2017年4月）
+Any static assets, like images, can be placed in the `public/` directory.
 
-### 3.1西安高新区统计局数据采集系统
+## 🧞 Commands
 
-数据采集系统页面，采用HTML,CSS,jQuery编写。
-精确还原设计原稿，实现页面效果和交互，用兼容性的写法兼容IE浏览器；利用正则表达式和layer封装校验提醒；页面中一些可以重复利用的组件，初步尝试页面组件化。
+All commands are run from the root of the project, from a terminal:
 
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
 
-# 技能清单
+## 👀 Want to learn more?
 
-- Angular/Less/TypeScript (熟练), 近一年中主要使用技术栈。
-- webpack/ gulp (熟练) ，工作中偶尔用到，一直在关注。
-- git/svn/fiddle (熟练)，近两年工作总主要用到git和fiddle, 之前用svn。
-- Vue/React (熟悉) ，React 粉，一直在关注研究。
-- Node.js/Egg.js/koa(熟悉)，熟悉文件处理及数据库CRUD基本操作。
-- MySQL/Mongodb(了解)，了解基本CRUD, 和后台同事协同工作不会构成障碍。
+Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-# 社交
+## Credit
 
-- github: https://github.com/wflixu
-- segmentfault: https://segmentfault.com/u/today_5aa33dd13dda9
-
-# 开源
-- NPM: [wx-picker-region-addcode](https://www.npmjs.com/package/wx-picker-region-addcode), [extract-a](https://www.npmjs.com/package/extract-a)
-
-# 其他
-
-英语六级，能阅读英文文档。
-
-# 致谢
-
-感谢您花时间阅读我的简历，期待能有机会和您共事。
-
-
-
-
-
+This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
