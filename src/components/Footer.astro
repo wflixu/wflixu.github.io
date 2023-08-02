@@ -1,13 +1,18 @@
 ---
 const today = new Date();
+import Social from './Social.astro';
 ---
 
 <footer>
 	&copy; {today.getFullYear()} wflixu. All rights reserved.
+	<Social platform="twitter" username="astrodotbuild" />
+	<Social platform="github" username="wflixu" />
+	<Social platform="youtube" username="astrodotbuild" />
 </footer>
 <style>
 	footer {
-		padding: 25px;
-		text-align: center;
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
 	}
 </style>

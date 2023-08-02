@@ -1,9 +1,0 @@
----
-layout: "../layouts/BlogPost.astro"
-title: "About Me"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "2023/08/01"
-heroImage: "/placeholder-about.jpg"
----
-
-# dkj
