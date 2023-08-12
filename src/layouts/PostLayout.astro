@@ -1,0 +1,92 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <article class="post">
+    <header>
+      <h1>
+        {frontmatter.title}
+      </h1>
+      <div class="meta">
+        <span>
+          📅 {frontmatter.date.slice(0, 10)}
+        </span>
+        <span>
+          ✍️ {frontmatter.author}
+        </span>
+      </div>
+      <div class="hr"></div>
+    </header>
+    <div class="content">
+      <slot />
+    </div>
+    <div class="hr"></div>
+    <div class="tags">
+      {
+        frontmatter.tags.map((tag) => (
+          <p class="tag">
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </p>
+        ))
+      }
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  a {
+    color: #00539f;
+  }
+  article {
+    box-sizing: border-box;
+    color: #424242;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  article > header {
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+
+  header h1 {
+    margin-bottom: 14px;
+    font-weight: bolder;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #212121;
+    font-family: lato, sans-serif;
+    font-style: normal;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+  }
+  header > .meta {
+    display: flex;
+    justify-content: center;
+  }
+  .meta > span {
+    padding: 0 16px;
+  }
+  .hr {
+    background-color: #009688;
+    height: 2px;
+    margin: 10px auto;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+</style>

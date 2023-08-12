@@ -1,18 +1,71 @@
 ---
 const today = new Date();
-import Social from './Social.astro';
+import Social from "./Social.astro";
 ---
 
 <footer>
-	&copy; {today.getFullYear()} wflixu. All rights reserved.
-	<Social platform="twitter" username="astrodotbuild" />
-	<Social platform="github" username="wflixu" />
-	<Social platform="youtube" username="astrodotbuild" />
+  <div class="hr"></div>
+  <div class="top">
+    <div class="left">
+      &copy; {today.getFullYear()} wflixu. All rights reserved.
+    </div>
+    <div class="right">
+      <a class="socal" href={`https://www.github.com/wflixu`}
+        ><svg
+          class="icon-github"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+          <path
+            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+          ></path>
+        </svg></a
+      >
+    </div>
+  </div>
+  <div class="icp">
+    <a href="https://beian.miit.gov.cn">陕ICP备2021006128号-1</a>
+  </div>
 </footer>
 <style>
-	footer {
-		display: flex;
-		gap: 1rem;
-		margin-top: 2rem;
-	}
+  footer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hr {
+    width: 75vw;
+    height: 2px;
+    margin: 10px 0;
+    background-color: var(--color-primary);
+  }
+  .top {
+    display: flex;
+    width: 75vw;
+    padding: 0 2em;
+    align-items: center;
+    gap: 2em;
+    justify-content: center;
+  }
+
+  .social {
+    font-size: 20px;
+    display: inline-flex;
+    height: 32px;
+  }
+
+  svg.icon-github {
+    width: 30px;
+    color: var(--color-primary);
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 2;
+    opacity: 0.9;
+  }
+  .icp {
+  }
 </style>

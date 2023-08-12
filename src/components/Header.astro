@@ -7,15 +7,45 @@ import { SITE_TITLE } from "../config";
 ---
 
 <header>
-  <nav>
-    <Hamburger />
+  <Hamburger />
+  <div class="nav-links">
+    <a class="home" href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tags/">Tags</a>
+    <a href="/about/">About</a>
     <ThemeIcon />
-    <Navigation />
-  </nav>
+  </div>
+  <nav></nav>
 </header>
 <style>
   header {
-    margin: 0em 0 2em;
+    width: 75vw;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    background-color: #f2f5c8;
+  }
+
+  .nav-links {
+    display: flex;
+    padding: 1em 2em;
+    align-items: center;
+  }
+
+  .nav-links > a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 0 0.75em;
+  }
+  .nav-links > a:hover {
+    cursor: pointer;
+    color: #111;
+  }
+
+  .nav-links > a.home {
+    flex: 1;
+    font-size: 24px;
+    font-weight: 600;
   }
   #skip-to-content {
     position: absolute;

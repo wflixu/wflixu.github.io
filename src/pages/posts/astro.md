@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/PostLayout.astro
 title: "Astro 快速入门"
-pubDate: "2023-08-01"
+date: "2023-08-01"
 description: "introdu astro"
 author: "lx"
 image:

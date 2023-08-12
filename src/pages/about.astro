@@ -1,7 +1,8 @@
 ---
-layout: "../layouts/BlogPost.astro";
-title: "About Me";
-description: "Lorem ipsum dolor sit amet";
-updatedDate: "2023/08/01";
-heroImage: "/placeholder-about.jpg";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About me";
 ---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>
