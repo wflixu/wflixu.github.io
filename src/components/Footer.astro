@@ -1,6 +1,5 @@
 ---
 const today = new Date();
-import Social from "./Social.astro";
 ---
 
 <footer>
@@ -10,7 +9,7 @@ import Social from "./Social.astro";
       &copy; {today.getFullYear()} wflixu. All rights reserved.
     </div>
     <div class="right">
-      <a class="socal" href={`https://www.github.com/wflixu`}
+      <a class="social" href={`https://www.github.com/wflixu`}
         ><svg
           class="icon-github"
           viewBox="0 0 24 24"
@@ -51,15 +50,20 @@ import Social from "./Social.astro";
     gap: 2em;
     justify-content: center;
   }
+  .top > .right {
+    display: inline-flex;
+    align-items: center;
+  }
 
   .social {
-    font-size: 20px;
+    font-size: 18px;
     display: inline-flex;
-    height: 32px;
+    height: 24px;
+    align-items: center;
   }
 
   svg.icon-github {
-    width: 30px;
+    width: 24px;
     color: var(--color-primary);
     fill: transparent;
     stroke: currentColor;
