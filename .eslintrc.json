@@ -1,3 +1,47 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "plugins": ["solid", "simple-import-sort"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-strict",
+    "@unocss"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "extraFileExtensions": [".tsx", ".ts"]
+  },
+  "ignorePatterns": ["dist/*"],
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "extends": ["plugin:solid/recommended", "plugin:jsx-a11y/strict"]
+    },
+    {
+      "files": ["*.astro"],
+      "globals": {
+        "astroHTML": "readonly"
+      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      },
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/triple-slash-reference": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
 }

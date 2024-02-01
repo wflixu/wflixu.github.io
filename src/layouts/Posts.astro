@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import Card from '@/components/Card.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import { SITE } from '@/config';
+import Layout from '@/layouts/Layout.astro';
+import Main from '@/layouts/Main.astro';
+import { slugify } from '@/utils/slugify';
+
+export interface Props {
+  pageNum: number;
+  totalPages: number;
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { pageNum, totalPages, posts } = Astro.props;
+
+const prev = pageNum > 1 ? '' : 'disabled';
+const next = pageNum < totalPages ? '' : 'disabled';
+---
+
+<Layout title={`文章 | ${SITE.title}`}>
+  <Header activeNav="posts" />
+  <Main pageTitle="文章" pageDesc="所有我发布的文章：">
+    <ul>
+      {posts.map(({ data }) => <Card href={`/posts/${slugify(data)}/`} frontmatter={data} />)}
+    </ul>
+  </Main>
+
+  {
+    totalPages > 1 && (
+      <nav class="mx-auto mb-8 mt-auto max-w-3xl w-full flex justify-between px-4" aria-label="Pagination">
+        <LinkButton
+          disabled={prev === 'disabled'}
+          href={`/posts${pageNum - 1 !== 1 ? `/${pageNum - 1}/` : '/'}`}
+          className="mr-4 select-none"
+          ariaLabel="Previous"
+        >
+          <i class="i-custom-arrow-left text-2xl" aria-hidden="true" />
+          上一页
+        </LinkButton>
+        <div>
+          {pageNum}/{totalPages}
+        </div>
+        <LinkButton
+          disabled={next === 'disabled'}
+          href={`/posts/${pageNum + 1}/`}
+          className="ml-4 select-none"
+          ariaLabel="Next"
+        >
+          下一页
+          <i class="i-custom-arrow-right text-2xl" aria-hidden="true" />
+        </LinkButton>
+      </nav>
+    )
+  }
+  <Footer noMarginTop={totalPages > 1} />
+</Layout>

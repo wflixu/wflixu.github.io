@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { unicodeSlugify } from '@/utils/slugify';
+
+import SubTitle from './SubTitle.astro';
+
+export interface Props {
+  href?: string;
+  frontmatter: CollectionEntry<'blog'>['data'];
+  secHeading?: boolean;
+}
+
+const { href = '', frontmatter, secHeading = true } = Astro.props;
+const { title, pubDatetime, description } = frontmatter;
+
+const headerProps = {
+  style: { viewTransitionName: unicodeSlugify(title) },
+  class: 'text-lg font-medium decoration-dashed hover:underline',
+};
+---
+
+<li class="my-6">
+  <a
+    href={href}
+    class="inline-block text-lg c-accent font-medium underline-offset-4 decoration-dashed focus-visible:underline-offset-0 focus-visible:no-underline"
+  >
+    {secHeading ? <h2 {...headerProps}>{title}</h2> : <h3 {...headerProps}>{title}</h3>}
+  </a>
+  <SubTitle datetime={pubDatetime} />
+  <p>{description}</p>
+</li>

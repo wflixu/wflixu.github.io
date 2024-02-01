@@ -1,0 +1,41 @@
+---
+import type { JSX } from 'solid-js'
+export interface Props {
+  href: string
+  className?: string
+  ariaLabel?: string
+  title?: string
+  disabled?: boolean
+  target?: astroHTML.JSX.HTMLAttributeAnchorTarget
+  children: JSX.Element
+}
+
+const { href, className, ariaLabel, title, disabled = false, target } = Astro.props
+---
+
+{
+  disabled ? (
+    <button
+      title={title}
+      aria-disabled={true}
+      class='group pointer-events-none inline-flex items-center justify-center op-50'
+      class:list={[className]}
+      aria-label={ariaLabel}
+      aria-disabled={true}
+    >
+      <slot />
+    </button>
+  ) : (
+    <a
+      href={href}
+      class='group inline-flex items-center justify-center hover:c-accent'
+      class:list={[className]}
+      aria-label={ariaLabel}
+      title={title}
+      aria-disabled={false}
+      target={target}
+    >
+      <slot />
+    </a>
+  )
+}

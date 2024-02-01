@@ -1,0 +1,89 @@
+body {
+  /* prettier-ignore */
+  --at-apply: flex min-h-100svh flex-col bg-fill c-base selection:(bg-accent bg-op-70 c-fill);
+}
+footer {
+  --at-apply: mx-auto max-w-3xl px-4;
+}
+a {
+  /* prettier-ignore */
+  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:(no-underline outline-dashed);
+}
+
+/* --------------------------------- 暗黑主题切换 Start --------------------------------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+.dark::view-transition-old(root) {
+  z-index: 1;
+}
+.dark::view-transition-new(root) {
+  z-index: 999;
+}
+::view-transition-old(root) {
+  z-index: 999;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}
+/* --------------------------------- 暗黑主题切换 End --------------------------------- */
+
+/* --------------------------------- 滚动条 Start --------------------------------- */
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+/* width */
+::-webkit-scrollbar {
+  --at-apply: w-1.5 h-1.5;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  --at-apply: bg-fill;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  --at-apply: bg-card rd-full;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  --at-apply: bg-card-muted;
+}
+/* --------------------------------- 滚动条 End --------------------------------- */
+
+/* --------------------------------- 代码高亮主题 Start --------------------------------- */
+:root.dark .astro-code,
+:root.dark .astro-code span {
+  background-color: var(--shiki-dark-bg) !important;
+  color: var(--shiki-dark) !important;
+}
+/* --------------------------------- 代码高亮主题 End --------------------------------- */
+
+/* --------------------------------- code copy button Start --------------------------------- */
+.code-wrapper {
+  --at-apply: relative;
+}
+.copy-code {
+  /* prettier-ignore */
+  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base rd-tr-6px hover:bg-card-muted;
+}
+/* --------------------------------- code copy button End --------------------------------- */
+
+/* --------------------------------- markdown head link Start --------------------------------- */
+.head-link {
+  /* prettier-ignore */
+  --at-apply: px-2 op-0 group-hover:op-80;
+}
+.head-copy-label {
+  --at-apply: text-sm c-accent v-mid;
+}
+/* --------------------------------- markdown head link End --------------------------------- */
+
+/* --------------------------------- giscus Start --------------------------------- */
+.giscus {
+  --uno: mt-5;
+}
+/* --------------------------------- giscus End --------------------------------- */
