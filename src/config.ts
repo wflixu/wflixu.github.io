@@ -7,7 +7,7 @@ type Site = {
 };
 
 export const SITE: Site = {
-  website: 'https://wtto00.github.io',
+  website: 'https://wflixu.github.io',
   author: 'Luke',
   desc: 'Record some issues encountered in daily work.',
   title: "Luke'S BLOG",
