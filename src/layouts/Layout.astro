@@ -5,8 +5,6 @@ import { ViewTransitions } from 'astro:transitions';
 
 import { SITE } from '@/config';
 
-const googleSiteVerification = process.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
-
 export interface Props {
   title?: string;
   description?: string | undefined;
@@ -54,13 +52,6 @@ const socialImageURL = ogImage || new URL('og.png', Astro.url.origin).href;
     <meta property="twitter:image" content={socialImageURL} />
 
     <meta name="theme-color" content="" />
-
-    {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />
-    }
 
     <ViewTransitions />
   </head>
