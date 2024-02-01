@@ -1,21 +1,75 @@
 {
-	"name": "blog",
-	"private": true,
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/mdx": "^0.14.0",
-		"@astrojs/rss": "^2.1.1",
-		"@astrojs/sitemap": "^1.0.0",
-		"@astrojs/vue": "^2.2.1",
-		"astro": "^2.9.6",
-		"vue": "^3.2.30"
-	}
+  "name": "blog",
+  "displayName": "Blog",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint --color --fix .",
+    "zhlint:all": "zhlint \"{,!(node_modules)/**/}*.md\" --fix",
+    "format": "prettier . --write --ignore-unknown",
+    "prepare": "husky && echo npx lint-staged > .husky/pre-commit"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/markdown-remark": "^4.2.0",
+    "@astrojs/rss": "^4.0.4",
+    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/solid-js": "^4.0.1",
+    "@resvg/resvg-js": "^2.6.0",
+    "astro": "^4.2.6",
+    "fuse.js": "^7.0.0",
+    "github-slugger": "^2.0.0",
+    "qrcode": "^1.5.3",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-external-links": "^3.0.0",
+    "rehype-slug": "^6.0.0",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
+    "solid-js": "^1.8.12",
+    "solid-satori": "^0.0.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@unocss/eslint-config": "^0.58.4",
+    "@unocss/preset-typography": "^0.58.4",
+    "@unocss/preset-uno": "^0.58.4",
+    "@unocss/reset": "^0.58.4",
+    "@unocss/transformer-directives": "^0.58.4",
+    "@unocss/transformer-variant-group": "^0.58.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.3",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-solid": "^0.13.1",
+    "gray-matter": "^4.0.3",
+    "husky": "^9.0.6",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "sharp": "^0.33.2",
+    "unocss": "^0.58.4",
+    "unocss-preset-theme": "^0.12.0",
+    "zhlint": "^0.7.3"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown",
+      "astro check"
+    ],
+    "*.{js,mjs,jsx,ts,mts,tsx,astro}": [
+      "eslint --fix"
+    ],
+    "*.md": [
+      "pnpm zhlint:all",
+      "node scripts/md-hook.js"
+    ]
+  }
 }

@@ -1,32 +1,50 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPost from "../../components/BlogPost.astro";
-export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
-  const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
-  ];
+import { getCollection } from 'astro:content';
 
-  return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.tags?.includes(tag)
-    );
+import Card from '@/components/Card.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { SITE } from '@/config';
+import Layout from '@/layouts/Layout.astro';
+import Main from '@/layouts/Main.astro';
+import getPostsByTag from '@/utils/getPostsByTag';
+import getSortedPosts from '@/utils/getSortedPosts';
+import getUniqueTags from '@/utils/getUniqueTags';
+import { slugify, unicodeSlugify } from '@/utils/slugify';
+
+export interface Props {
+  tag: string;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  const tags = getUniqueTags(posts);
+
+  return tags.map((tag) => {
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { tag },
     };
   });
 }
 
-const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { tag } = Astro.props;
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+const tagPosts = getPostsByTag(posts, tag);
+
+const sortTagsPost = getSortedPosts(tagPosts);
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  {
-    posts.map((post) => (
-      <BlogPost url={post.url} title={post.frontmatter.title} />
-    ))
-  }
-</BaseLayout>
+<Layout title={`标签: ${tag} | ${SITE.title}`}>
+  <Header activeNav="tags" />
+  <Main pageTitle={['标签: ', tag]} titleTransition={tag} pageDesc={`标签包含 "${tag}" 的所有文章：`}>
+    <h1 slot="title" transition:name={unicodeSlugify(tag)}>{`标签: ${tag}`}</h1>
+    <ul>
+      {sortTagsPost.map(({ data }) => <Card href={`/posts/${slugify(data)}/`} frontmatter={data} />)}
+    </ul>
+  </Main>
+  <Footer />
+</Layout>

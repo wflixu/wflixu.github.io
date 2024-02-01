@@ -1,7 +1,3 @@
-# 我的博客
+# Luke'S BLOG
 
-我的博客
-
-## 技术
-
-astro
+使用 [Astro](https://astro.build/) + [solidjs](https://www.solidjs.com/) 构建
