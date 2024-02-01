@@ -1,21 +1,16 @@
 {
-	"name": "blog",
-	"private": true,
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@astrojs/mdx": "^0.14.0",
-		"@astrojs/rss": "^2.1.1",
-		"@astrojs/sitemap": "^1.0.0",
-		"@astrojs/vue": "^2.2.1",
-		"astro": "^2.9.6",
-		"vue": "^3.2.30"
-	}
+  "name": "myblog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }
